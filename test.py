@@ -1,4 +1,6 @@
-from playsound import playsound
+import pygame, time
+
+pygame.init()
 
 strikes = [
     {
@@ -40,8 +42,12 @@ strikes = [
 
 ]
 
-while 1:
+while True:
     for strike in strikes:
         print("playing thunder track: " + strike['thunder'])
         print("flashing light pattern: " + strike['lightning'])
-        playsound("Sounds/" + strike['thunder'])
+        #playsound("Sounds/" + strike['thunder'])
+        pygame.mixer.music.load("Sounds/" + strike['thunder'])
+        pygame.mixer.music.play()
+        time.sleep(10)
+        pygame.mixer.music.stop()
