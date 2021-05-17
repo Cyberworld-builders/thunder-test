@@ -11,15 +11,20 @@ import RPi.GPIO as GPIO
 # GPIO.output(RELAIS_1_GPIO, GPIO.LOW) # out
 # GPIO.output(RELAIS_1_GPIO, GPIO.HIGH) # on
 
+# re-map the bins on the board using bcm mode
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(17, GPIO.OUT)
-GPIO.output(17, GPIO.LOW)
+
+# set up each channel as an input or output
+GPIO.setup(17, GPIO.OUT, initial=GPIO.LOW)
+
+
+GPIO.output(17, GPIO.HIGH)
 
 # time.sleep(0.25)
 time.sleep(1)
 
 
-GPIO.output(17, GPIO.HIGH)
+GPIO.output(17, GPIO.LOW)
 
 # GPIO.output(17, GPIO.LOW)
 # GPIO.output(17, GPIO.HIGH)
