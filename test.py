@@ -1,4 +1,5 @@
-import pygame, time
+# import pygame, time
+import time
 import RPi.GPIO as GPIO
 
 # set up the relay pins
