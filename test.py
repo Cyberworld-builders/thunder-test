@@ -7,18 +7,6 @@ from audioplayer import AudioPlayer
 #
 # # set up each channel as an input or output
 # GPIO.setup(17, GPIO.OUT, initial=GPIO.LOW)
-#
-#
-# GPIO.output(17, GPIO.HIGH)
-#
-# time.sleep(1)
-#
-#
-# GPIO.output(17, GPIO.LOW)
-
-
-
-
 
 # define the strike objects that specify the sound file and light pattern
 
@@ -86,6 +74,14 @@ patterns = [
 
 ]
 
+def flash():
+    print("flash")
+    # GPIO.output(17, GPIO.HIGH)
+
+def pause():
+    print("pause")
+    # GPIO.output(17, GPIO.LOW)
+
 # loop through each strike object
 
 while True:
@@ -110,9 +106,10 @@ while True:
 
         for pattern in strike['patterns']:
             print(patterns[pattern]['name'])
-            print("flash")
+            flash()
             time.sleep(patterns[pattern]['flash'])
-            print("pause")
+
+            pause()
             time.sleep(patterns[pattern]['pause'])
 
         # pygame.mixer.music.load(file)
@@ -135,7 +132,3 @@ while True:
         secondsPassed = 0
 
 GPIO.cleanup()
-
-# class Lightning:
-#     def boom:
-#
