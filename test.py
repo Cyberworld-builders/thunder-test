@@ -104,33 +104,29 @@ strikes = [
         'thunderFile' : "thunder-02.mp3",
         'lightningPattern'  :   [
 
-            # 1, 2 Hesitates for nearly a second and then there's a big flash
+            # 1, 2, & 3 Hesitates for nearly a second and then there's a big flash
             { 'action' : "pause",   'duration'  : .8 },
-            { 'action' : "flash",   'duration'  : 1.2 },
+            { 'action' : "flash",   'duration'  : 2.2 },
 
-            # 3 Crackles a bit and pauses
+            # 4 Crackles a bit and pauses
             { 'action' : "crackle", 'duration'  : .4 },
             { 'action' : "pause",   'duration'  : .6 },
 
-            # 4 Tiny flash and then pauses
+            # 5 Tiny flash and then pauses
             { 'action' : "flash",   'duration'  : .2 },
             { 'action' : "pause",   'duration'  : .8 },
 
-            # 5 Crackles a bit more briefly and then pauses
+            # 6 Crackles a bit more briefly and then pauses
             { 'action' : "crackle",   'duration'  : .4 },
             { 'action' : "pause", 'duration'  : .6 },
 
-            # 6 Tiny flash and then pauses
+            # 7 Tiny flash and then pauses
             { 'action' : "flash",   'duration'  : .1 },
             { 'action' : "pause",   'duration'  : .9 },
 
-            # 7 Flickers a bit and pauses
-            { 'action' : "flicker", 'duration'  : .4 },
-            { 'action' : "pause",   'duration'  : .6 },
-
             # 8 Flickers a bit more briefly and then pauses
             { 'action' : "crackle",   'duration'  : .2 },
-            { 'action' : "pause", 'duration'  : .8 },
+            { 'action' : "pause", 'duration'  : .6 },
 
         ]
     },
