@@ -3,10 +3,10 @@ from audioplayer import AudioPlayer
 import RPi.GPIO as GPIO
 
 # # re-map the bins on the board using bcm mode
-# GPIO.setmode(GPIO.BCM)
+GPIO.setmode(GPIO.BCM)
 #
 # # set up each channel as an input or output
-# GPIO.setup(17, GPIO.OUT, initial=GPIO.LOW)
+GPIO.setup(17, GPIO.OUT, initial=GPIO.LOW)
 
 # define the strike objects that specify the sound file and light pattern
 
@@ -76,11 +76,11 @@ patterns = [
 
 def flash():
     print("flash")
-    # GPIO.output(17, GPIO.HIGH)
+    GPIO.output(17, GPIO.HIGH)
 
 def pause():
     print("pause")
-    # GPIO.output(17, GPIO.LOW)
+    GPIO.output(17, GPIO.LOW)
 
 # loop through each strike object
 
