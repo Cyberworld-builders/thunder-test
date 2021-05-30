@@ -37,70 +37,67 @@ def pulse(duration, length):
         time.sleep(halfLength)
         i += 1
 
-lightning = {
-    'trackone' :   [
-        # 1
-        { 'action' : "pause",   'duration'  : .1 },
-        { 'action' : "flash",   'duration'  : .3 },
-        { 'action' : "crackle", 'duration'  : .4 },
-        { 'action' : "flicker", 'duration'  : .2 },
-
-        # 2
-        { 'action' : "flicker", 'duration'  : .2 },
-        { 'action' : "flash",   'duration'  : .3 },
-        { 'action' : "crackle", 'duration'  : .2 },
-        { 'action' : "flicker", 'duration'  : .3 },
-
-        # 3
-        { 'action' : "flash",   'duration'  : .2 },
-        { 'action' : "crackle", 'duration'  : .2 },
-        { 'action' : "flicker", 'duration'  : .3 },
-        { 'action' : "pause",   'duration'  : .3 },
-
-        # 4
-        { 'action' : "flicker", 'duration'  : .3 },
-        { 'action' : "pause",   'duration'  : .3 },
-        { 'action' : "flicker", 'duration'  : .4 },
-
-        # 5
-        { 'action' : "flash",   'duration'  : .3 },
-        { 'action' : "pause",   'duration'  : .4 },
-        { 'action' : "flicker", 'duration'  : .3 },
-
-        # 6
-        { 'action' : "pause",   'duration'  : .5 },
-        { 'action' : "flicker", 'duration'  : .3 },
-        { 'action' : "pause",   'duration'  : .2 },
-
-        # 7
-        { 'action' : "flicker", 'duration'  : .2 },
-        { 'action' : "flash",   'duration'  : .4 },
-        { 'action' : "pause",   'duration'  : .1 },
-        { 'action' : "flicker", 'duration'  : .2 },
-        { 'action' : "pause",   'duration'  : .1 },
-
-        # 8
-        { 'action' : "crackle", 'duration'  : .3 },
-        { 'action' : "pause",   'duration'  : .2 },
-        { 'action' : "flicker", 'duration'  : .3 },
-        { 'action' : "pause",   'duration'  : .2 },
-
-        # 9
-        { 'action' : "flicker", 'duration'  : .3 },
-        { 'action' : "pause",   'duration'  : .5 },
-        { 'action' : "flicker", 'duration'  : .1 },
-
-        # 10
-        { 'action' : "pause", 'duration'  : .1 }
-
-    ]
-}
-
 strikes = [
     {
-        'thunder' : "thunder-01.mp3",
-        'patterns' : [1,2,0,0,0,0,0,0,0,0],
-        'description' :   "Starts with a boom and then flickers"
+        'description' :   "Starts with a boom and then flickers",
+        'thunderFile' : "thunder-01.mp3",
+        'lightningPattern'  :   [
+
+            # 1
+            { 'action' : "pause",   'duration'  : .1 },
+            { 'action' : "flash",   'duration'  : .3 },
+            { 'action' : "crackle", 'duration'  : .4 },
+            { 'action' : "flicker", 'duration'  : .2 },
+
+            # 2
+            { 'action' : "flicker", 'duration'  : .2 },
+            { 'action' : "flash",   'duration'  : .3 },
+            { 'action' : "crackle", 'duration'  : .2 },
+            { 'action' : "flicker", 'duration'  : .3 },
+
+            # 3
+            { 'action' : "flash",   'duration'  : .2 },
+            { 'action' : "crackle", 'duration'  : .2 },
+            { 'action' : "flicker", 'duration'  : .3 },
+            { 'action' : "pause",   'duration'  : .3 },
+
+            # 4
+            { 'action' : "flicker", 'duration'  : .3 },
+            { 'action' : "pause",   'duration'  : .3 },
+            { 'action' : "flicker", 'duration'  : .4 },
+
+            # 5
+            { 'action' : "flash",   'duration'  : .3 },
+            { 'action' : "pause",   'duration'  : .4 },
+            { 'action' : "flicker", 'duration'  : .3 },
+
+            # 6
+            { 'action' : "pause",   'duration'  : .5 },
+            { 'action' : "flicker", 'duration'  : .3 },
+            { 'action' : "pause",   'duration'  : .2 },
+
+            # 7
+            { 'action' : "flicker", 'duration'  : .2 },
+            { 'action' : "flash",   'duration'  : .4 },
+            { 'action' : "pause",   'duration'  : .1 },
+            { 'action' : "flicker", 'duration'  : .2 },
+            { 'action' : "pause",   'duration'  : .1 },
+
+            # 8
+            { 'action' : "crackle", 'duration'  : .3 },
+            { 'action' : "pause",   'duration'  : .2 },
+            { 'action' : "flicker", 'duration'  : .3 },
+            { 'action' : "pause",   'duration'  : .2 },
+
+            # 9
+            { 'action' : "flicker", 'duration'  : .3 },
+            { 'action' : "pause",   'duration'  : .5 },
+            { 'action' : "flicker", 'duration'  : .1 },
+
+            # 10
+            { 'action' : "pause", 'duration'  : .1 }
+
+        ]
     },
 ]
 
@@ -126,15 +123,15 @@ while True:
         pygame.mixer.music.load(file)
         pygame.mixer.music.play()
 
-        for strike in lightning['trackone']:
-            if (strike['action'] == "flash"):
-                flash(strike['duration'])
-            elif (strike['action'] == "crackle"):
-                pulse(strike['duration'], .3)
-            elif (strike['action'] == "flicker"):
-                pulse(strike['duration'], .1)
+        for pattern in strike['lightningPattern']:
+            if (pattern['action'] == "flash"):
+                flash(pattern['duration'])
+            elif (pattern['action'] == "crackle"):
+                pulse(pattern['duration'], .3)
+            elif (pattern['action'] == "flicker"):
+                pulse(pattern['duration'], .1)
             else:
-                pause(strike['duration'])
+                pause(pattern['duration'])
 
         secondsPassed = time.time() - startTime
         print("seconds passed: " + str(round(secondsPassed,2)))
