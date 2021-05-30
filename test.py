@@ -106,7 +106,7 @@ strikes = [
 
             # 1, 2 Hesitates for nearly a second and then there's a big flash
             { 'action' : "pause",   'duration'  : .8 },
-            { 'action' : "flash",   'duration'  : .12 },
+            { 'action' : "flash",   'duration'  : 1.2 },
 
             # 3 Crackles a bit and pauses
             { 'action' : "crackle", 'duration'  : .4 },
