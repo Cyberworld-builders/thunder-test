@@ -17,22 +17,22 @@ pygame.init()
 # Duration is measured in seconds, where .1 = one tenth of one second.
 
 def pause(duration):
-    GPIO.setmode(lightningPin, LOW)
+    GPIO.setmode(lightningPin, GPIO.LOW)
     time.sleep(duration)
 
 def flash(duration):
-    GPIO.setmode(lightningPin, HIGH)
+    GPIO.setmode(lightningPin, GPIO.HIGH)
     time.sleep(duration)
-    GPIO.setmode(lightningPin, LOW)
+    GPIO.setmode(lightningPin, GPIO.LOW)
 
 def pulse(duration, length):
     pulseCount = duration / length
 
     i = 0
     while i < pulseCount:
-        GPIO.setmode(lightningPin, HIGH)
+        GPIO.setmode(lightningPin, GPIO.HIGH)
         time.sleep(length)
-        GPIO.setmode(lightningPin, LOW)
+        GPIO.setmode(lightningPin, GPIO.LOW)
         time.sleep(length)
         i += 1
 
