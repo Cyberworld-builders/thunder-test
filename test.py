@@ -97,27 +97,16 @@ lightning = {
     ]
 }
 
-strikes = [
-    {
-        'thunder' : "thunder-02.mp3",
-        'patterns' : [
+# strikes = [
+#     {
+#         'thunder' : "thunder-02.mp3",
+#         'patterns' : [
+#
+#             1,2,0,0,0,0,0,0,0,0],
+#         'description' :   "Starts with a boom and then flickers"
+#     },
+# ]
 
-            1,2,0,0,0,0,0,0,0,0],
-        'description' :   "Starts with a boom and then flickers"
-    },
-]
-
-
-
-
-def flash(length):
-    print("flash")
-    GPIO.output(lightningPin, GPIO.HIGH)
-    time.sleep(length)
-def pause(length):
-    print("pause")
-    GPIO.output(lightningPin, GPIO.LOW)
-    time.sleep(length)
 # loop through each strike object
 
 while True:
