@@ -205,7 +205,7 @@ while True:
         pygame.mixer.music.play()
 
         for strike in lightning['trackone']:
-            if (strik['action'] == "flash"):
+            if (strike['action'] == "flash"):
                 flash(strike['duration'])
             elif (strike['action'] == "crackle"):
                 pulse(strike['duration'], .2)
