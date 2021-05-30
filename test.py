@@ -125,12 +125,48 @@ strikes = [
             { 'action' : "pause",   'duration'  : .9 },
 
             # 8 Flickers a bit more briefly and then pauses
-            { 'action' : "crackle",   'duration'  : .2 },
+            { 'action' : "flicker",   'duration'  : .2 },
             { 'action' : "pause", 'duration'  : .6 },
 
         ]
     },
+    {
+        'description' :   "Starts with a boom and then flickers and fades.",
+        'thunderFile' : "thunder-03.mp3",
+        'lightningPattern'  :   [
 
+            # 1 Hesitates for half a second and then flickers a bit
+            { 'action' : "pause",   'duration'  : .5 },
+            { 'action' : "flicker", 'duration'  : .5 },
+
+            # 2 Builds to a crackle and pauses
+            { 'action' : "flicker", 'duration'  : .25 },
+            { 'action' : "crackle",   'duration'  : .5 },
+            { 'action' : "flicker",   'duration'  : .25 },
+
+            # 3 flicker pause flicker
+            { 'action' : "pause",   'duration'  : .4 },
+            { 'action' : "flicker",   'duration'  : .2 },
+            { 'action' : "pause",   'duration'  : .2 },
+            { 'action' : "flicker",   'duration'  : .2 },
+
+            # 4 shorter flickers that fade out
+            { 'action' : "pause",   'duration'  : .5 },
+            { 'action' : "flicker",   'duration'  : .1 },
+            { 'action' : "pause",   'duration'  : .3 },
+            { 'action' : "flicker",   'duration'  : .1 },
+
+            # 5 Barely anything, maybe a short flicker
+            { 'action' : "pause",   'duration'  : .3 },
+            { 'action' : "flicker",   'duration'  : .1 },
+            { 'action' : "pause",   'duration'  : .6 },
+
+            # 6. basically a long pause, maybe a tiny flash
+            { 'action' : "flash",   'duration'  : .3 },
+            { 'action' : "pause", 'duration'  : .9 },
+
+        ]
+    },
 ]
 
 # loop through each strike object
