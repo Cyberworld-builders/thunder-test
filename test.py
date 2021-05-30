@@ -204,24 +204,15 @@ while True:
         pygame.mixer.music.load(file)
         pygame.mixer.music.play()
 
-        # for pattern in strike['patterns']:
-        #     print(patterns[pattern]['name'])
-        #     flash(patterns[pattern]['flash'])
-        #     # time.sleep(patterns[pattern]['flash'])
-        #
-        #     pause(patterns[pattern]['pause'])
-        #     # time.sleep(patterns[pattern]['pause'])
-
-
-        for strike in lightning.trackone:
-            if (strike.action == "flash"):
-                flash(strike.duration)
-            elif (strike.action == "crackle"):
-                pulse(strike.duration, .2)
-            elif (strike.action == "flicker"):
-                pulse(strike.duration, .1)
+        for strike in lightning['trackone']:
+            if (strik['action'] == "flash"):
+                flash(strike['duration'])
+            elif (strike['action'] == "crackle"):
+                pulse(strike['duration'], .2)
+            elif (strike['action'] == "flicker"):
+                pulse(strike['duration'], .1)
             else:
-                pause(strike.duration)
+                pause(strike['duration'])
 
         secondsPassed = time.time() - startTime
         print("seconds passed: " + str(round(secondsPassed,2)))
