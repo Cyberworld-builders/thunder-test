@@ -41,13 +41,13 @@ lightning = {
     'trackone' :   [
         # 1
         { 'action' : "pause",   'duration'  : .1 },
-        { 'action' : "flash",   'duration'  : .2 },
-        { 'action' : "crackle", 'duration'  : .6 },
-        { 'action' : "flicker", 'duration'  : .1 },
+        { 'action' : "flash",   'duration'  : .3 },
+        { 'action' : "crackle", 'duration'  : .4 },
+        { 'action' : "flicker", 'duration'  : .2 },
 
         # 2
-        { 'action' : "flicker", 'duration'  : .3 },
-        { 'action' : "flash",   'duration'  : .2 },
+        { 'action' : "flicker", 'duration'  : .2 },
+        { 'action' : "flash",   'duration'  : .3 },
         { 'action' : "crackle", 'duration'  : .2 },
         { 'action' : "flicker", 'duration'  : .3 },
 
@@ -132,9 +132,9 @@ while True:
             if (strike['action'] == "flash"):
                 flash(strike['duration'])
             elif (strike['action'] == "crackle"):
-                pulse(strike['duration'], .2)
+                pulse(strike['duration'], .4)
             elif (strike['action'] == "flicker"):
-                pulse(strike['duration'], .1)
+                pulse(strike['duration'], .2)
             else:
                 pause(strike['duration'])
 
