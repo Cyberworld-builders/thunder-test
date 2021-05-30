@@ -97,15 +97,13 @@ lightning = {
     ]
 }
 
-# strikes = [
-#     {
-#         'thunder' : "thunder-02.mp3",
-#         'patterns' : [
-#
-#             1,2,0,0,0,0,0,0,0,0],
-#         'description' :   "Starts with a boom and then flickers"
-#     },
-# ]
+strikes = [
+    {
+        'thunder' : "thunder-01.mp3",
+        'patterns' : [1,2,0,0,0,0,0,0,0,0],
+        'description' :   "Starts with a boom and then flickers"
+    },
+]
 
 # loop through each strike object
 
