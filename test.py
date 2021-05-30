@@ -3,9 +3,12 @@ import RPi.GPIO as GPIO
 
 # # re-map the bins on the board using bcm mode
 GPIO.setmode(GPIO.BCM)
+
+lightningPin = 17
+
 #
 # # set up each channel as an input or output
-GPIO.setup(17, GPIO.OUT, initial=GPIO.LOW)
+GPIO.setup(lightningPin, GPIO.OUT, initial=GPIO.LOW)
 
 # define the strike objects that specify the sound file and light pattern
 
@@ -73,14 +76,14 @@ patterns = [
 
 ]
 
-def flash():
+def flash(length):
     print("flash")
-    GPIO.output(17, GPIO.HIGH)
-
-def pause():
+    GPIO.output(lightningPin, GPIO.HIGH)
+    time.sleep(length)
+def pause(length):
     print("pause")
-    GPIO.output(17, GPIO.LOW)
-
+    GPIO.output(lightningPin, GPIO.LOW)
+    time.sleep(length)
 # loop through each strike object
 
 while True:
@@ -106,10 +109,10 @@ while True:
         for pattern in strike['patterns']:
             print(patterns[pattern]['name'])
             flash(patterns[pattern]['flash'])
-            time.sleep(patterns[pattern]['flash'])
+            # time.sleep(patterns[pattern]['flash'])
 
             pause(patterns[pattern]['pause'])
-            time.sleep(patterns[pattern]['pause'])
+            # time.sleep(patterns[pattern]['pause'])
 
         secondsPassed = time.time() - startTime
         print("seconds passed: " + str(round(secondsPassed,2)))
