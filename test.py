@@ -1,5 +1,4 @@
 import pygame, time
-from audioplayer import AudioPlayer
 import RPi.GPIO as GPIO
 
 # # re-map the bins on the board using bcm mode
@@ -99,9 +98,6 @@ while True:
 
         print("seconds passed: " + str(round(secondsPassed,2)))
 
-        # player = AudioPlayer(file)
-        # player.play()
-
         print("flashing light pattern: " + strike['description'])
 
         pygame.mixer.music.load(file)
@@ -109,10 +105,10 @@ while True:
 
         for pattern in strike['patterns']:
             print(patterns[pattern]['name'])
-            flash()
+            flash(patterns[pattern]['flash'])
             time.sleep(patterns[pattern]['flash'])
 
-            pause()
+            pause(patterns[pattern]['pause'])
             time.sleep(patterns[pattern]['pause'])
 
         secondsPassed = time.time() - startTime
@@ -126,7 +122,7 @@ while True:
             time.sleep(timeRemaining)
 
         pygame.mixer.music.stop()
-        # player.stop()
+
         secondsPassed = 0
 
 GPIO.cleanup()
