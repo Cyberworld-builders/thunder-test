@@ -162,8 +162,14 @@ strikes = [
             { 'action' : "pause",   'duration'  : .6 },
 
             # 6. basically a long pause, maybe a tiny flash
+            { 'action' : "crackle",   'duration'  : .2 },
+            { 'action' : "pause", 'duration'  : .8 },
+
+            # 6. basically a long pause, maybe a tiny flash
             { 'action' : "flash",   'duration'  : .3 },
-            { 'action' : "pause", 'duration'  : .9 },
+            { 'action' : "pause", 'duration'  : .7 },
+
+
 
         ]
     },
