@@ -92,7 +92,7 @@ lightning = {
         { 'action' : "flicker", 'duration'  : .1 },
 
         # 10
-        { 'action' : "pause", 'duration'  : .3 }
+        { 'action' : "pause", 'duration'  : .1 }
 
     ]
 }
