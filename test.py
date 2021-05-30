@@ -1,6 +1,6 @@
 import pygame, time
 from audioplayer import AudioPlayer
-# import RPi.GPIO as GPIO
+import RPi.GPIO as GPIO
 
 # # re-map the bins on the board using bcm mode
 # GPIO.setmode(GPIO.BCM)
