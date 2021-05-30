@@ -60,8 +60,8 @@ strikes = [
 patterns = [
     {
         'name'  : "flicker",
-        'flash' : .25,
-        'pause' :   .25
+        'flash' : .1,
+        'pause' :   .1
     },
     {
         'name'  :   "boom",
