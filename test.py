@@ -63,11 +63,9 @@ lightning = {
         { 'action' : "flicker", 'duration'  : .4 },
 
         # 5
-        { 'action' : "flash",   'duration'  : .1 },
+        { 'action' : "flash",   'duration'  : .3 },
         { 'action' : "pause",   'duration'  : .4 },
-        { 'action' : "flicker", 'duration'  : .3 },
-        { 'action' : "pause",   'duration'  : .1 },
-        { 'action' : "flash",   'duration'  : .1 },
+        { 'action' : "flicker", 'duration'  : .3 }
 
         # 6
         { 'action' : "pause",   'duration'  : .5 },
@@ -76,10 +74,10 @@ lightning = {
 
         # 7
         { 'action' : "flicker", 'duration'  : .2 },
-        { 'action' : "flash",   'duration'  : .2 },
-        { 'action' : "pause",   'duration'  : .2 },
+        { 'action' : "flash",   'duration'  : .4 },
+        { 'action' : "pause",   'duration'  : .1 },
         { 'action' : "flicker", 'duration'  : .2 },
-        { 'action' : "pause",   'duration'  : .2 },
+        { 'action' : "pause",   'duration'  : .1 },
 
         # 8
         { 'action' : "crackle", 'duration'  : .3 },
@@ -132,9 +130,9 @@ while True:
             if (strike['action'] == "flash"):
                 flash(strike['duration'])
             elif (strike['action'] == "crackle"):
-                pulse(strike['duration'], .4)
+                pulse(strike['duration'], .3)
             elif (strike['action'] == "flicker"):
-                pulse(strike['duration'], .2)
+                pulse(strike['duration'], .1)
             else:
                 pause(strike['duration'])
 
