@@ -111,7 +111,7 @@ while True:
 
         # play the sound file and trigger the relay according to the strike object's light pattern
 
-        file = "Sounds/" + strike['thunder']
+        file = "Sounds/" + strike['thunderFile']
         print("playing thunder track: " + file)
 
         secondsPassed = time.time() - startTime
