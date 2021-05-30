@@ -14,15 +14,113 @@ GPIO.setup(lightningPin, GPIO.OUT, initial=GPIO.LOW)
 
 pygame.init()
 
+# Duration is measured in seconds, where .1 = one tenth of one second.
+
+def pause(duration):
+    GPIO.setmode(lightningPin, LOW)
+    time.sleep(duration)
+
+def flash(duration):
+    GPIO.setmode(lightningPin, HIGH)
+    time.sleep(duration)
+    GPIO.setmode(lightningPin, LOW)
+
+def pulse(duration, length):
+    pulseCount = duration / length
+
+    i = 0
+    while i < pulseCount:
+        GPIO.setmode(lightningPin, HIGH)
+        time.sleep(length)
+        GPIO.setmode(lightningPin, LOW)
+        time.sleep(length)
+        i += 1
+
+def flicker(duration)
+
+lightning = {
+    'trackone' :   [
+        # 1
+        { 'action' : "pause",   'duration'  : .1 },
+        { 'action' : "flash",   'duration'  : .2 },
+        { 'action' : "crackle", 'duration'  : .6 },
+        { 'action' : "flicker", 'duration'  : .1 },
+
+        # 2
+        { 'action' : "flicker", 'duration'  : .3 },
+        { 'action' : "flash",   'duration'  : .2 },
+        { 'action' : "crackle", 'duration'  : .2 },
+        { 'action' : "flicker", 'duration'  : .3 },
+
+        # 3
+        { 'action' : "flash",   'duration'  : .2 },
+        { 'action' : "crackle", 'duration'  : .2 },
+        { 'action' : "flicker", 'duration'  : .3 },
+        { 'action' : "pause",   'duration'  : .3 },
+
+        # 4
+        { 'action' : "flicker", 'duration'  : .3 },
+        { 'action' : "pause",   'duration'  : .3 },
+        { 'action' : "flicker", 'duration'  : .4 },
+
+        # 5
+        { 'action' : "flash",   'duration'  : .1 },
+        { 'action' : "pause",   'duration'  : .4 },
+        { 'action' : "flicker", 'duration'  : .3 },
+        { 'action' : "pause",   'duration'  : .1 },
+        { 'action' : "flash",   'duration'  : .1 },
+
+        # 6
+        { 'action' : "pause",   'duration'  : .5 },
+        { 'action' : "flicker", 'duration'  : .3 },
+        { 'action' : "pause",   'duration'  : .2 },
+
+        # 7
+        { 'action' : "flicker", 'duration'  : .2 },
+        { 'action' : "flash",   'duration'  : .2 },
+        { 'action' : "pause",   'duration'  : .2 },
+        { 'action' : "flicker", 'duration'  : .2 },
+        { 'action' : "pause",   'duration'  : .2 },
+
+        # 8
+        { 'action' : "crackle", 'duration'  : .3 },
+        { 'action' : "pause",   'duration'  : .2 },
+        { 'action' : "flicker", 'duration'  : .3 },
+        { 'action' : "pause",   'duration'  : .2 },
+
+        # 9
+        { 'action' : "flicker", 'duration'  : .3 },
+        { 'action' : "pause",   'duration'  : .5 },
+        { 'action' : "flicker", 'duration'  : .1 },
+
+        # 10
+        { 'action' : "pause", 'duration'  : .3 }
+
+    ]
+}
+
 strikes = [
     {
         'thunder' : "thunder-01.mp3",
-        'patterns' :   [0,0,0,2,0,0,0,2,0,0,0,0],
+        'patterns' :   [
+            'flicker',
+            'flicker',
+            'boom',
+            'flicker',
+            'flicker',
+            'flicker',
+            'boom',
+            'flicker',
+            'flicker',
+            'flicker'
+        ],
         'description':  "A series of small flickers."
     },
     {
         'thunder' : "thunder-02.mp3",
-        'patterns' : [1,2,0,0,0,0,0,0,0,0],
+        'patterns' : [
+
+            1,2,0,0,0,0,0,0,0,0],
         'description' :   "Starts with a boom and then flickers"
     },
     {
@@ -57,24 +155,26 @@ strikes = [
 
 ]
 
-patterns = [
-    {
-        'name'  : "flicker",
+patterns = {
+    'flicker' : {
         'flash' : .1,
         'pause' :   .1
     },
-    {
-        'name'  :   "boom",
-        'flash' :   2,
+    'tinyFlicker' : {
+        'flash' : .05,
+        'pause' :   .05
+    },
+    'boom' : {
+        'flash' : 2,
         'pause' :   .25
     },
-    {
-        'name'  :   "pause",
-        'flash' :   0,
+    'pause' : {
+        'flash' : .0,
         'pause' :   1
-    },
+    }
+}
 
-]
+
 
 def flash(length):
     print("flash")
