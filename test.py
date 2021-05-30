@@ -104,6 +104,9 @@ while True:
 
         print("flashing light pattern: " + strike['description'])
 
+        pygame.mixer.music.load(file)
+        pygame.mixer.music.play()
+
         for pattern in strike['patterns']:
             print(patterns[pattern]['name'])
             flash()
@@ -111,11 +114,6 @@ while True:
 
             pause()
             time.sleep(patterns[pattern]['pause'])
-
-        pygame.mixer.music.load(file)
-        pygame.mixer.music.play()
-
-        pygame.mixer.music.stop()
 
         secondsPassed = time.time() - startTime
         print("seconds passed: " + str(round(secondsPassed,2)))
@@ -127,7 +125,7 @@ while True:
         if(timeRemaining < thunderDuration):
             time.sleep(timeRemaining)
 
-
+        pygame.mixer.music.stop()
         # player.stop()
         secondsPassed = 0
 
