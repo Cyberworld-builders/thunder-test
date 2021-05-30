@@ -26,7 +26,7 @@ def flash(duration):
     GPIO.output(lightningPin, GPIO.LOW)
 
 def pulse(duration, length):
-    pulseCount = duration / length
+    pulseCount = duration / (length * 2)
 
     i = 0
     while i < pulseCount:
