@@ -99,78 +99,14 @@ lightning = {
 
 strikes = [
     {
-        'thunder' : "thunder-01.mp3",
-        'patterns' :   [
-            'flicker',
-            'flicker',
-            'boom',
-            'flicker',
-            'flicker',
-            'flicker',
-            'boom',
-            'flicker',
-            'flicker',
-            'flicker'
-        ],
-        'description':  "A series of small flickers."
-    },
-    {
         'thunder' : "thunder-02.mp3",
         'patterns' : [
 
             1,2,0,0,0,0,0,0,0,0],
         'description' :   "Starts with a boom and then flickers"
     },
-    {
-        'thunder' : "thunder-03.mp3",
-        'patterns' : [0,0,0,2,0,0,0,2,0,0,0,0],
-        'description' :   "Starts with a boom and then flickers"
-    },
-    # {
-    #     'thunder' : "thunder-04.mp3",
-    #     'lightning' :   "pattern 4"
-    # },
-    # {
-    #     'thunder' : "thunder-05.mp3",
-    #     'lightning' :   "pattern 5"
-    # },
-    # {
-    #     'thunder' : "thunder-06.mp3",
-    #     'lightning' :   "pattern 6"
-    # },
-    # {
-    #     'thunder' : "thunder-07.mp3",
-    #     'lightning' :   "pattern 7"
-    # },
-    # {
-    #     'thunder' : "thunder-08.mp3",
-    #     'lightning' :   "pattern 8"
-    # },
-    # {
-    #     'thunder' : "thunder-09.mp3",
-    #     'lightning' :   "pattern 9"
-    # },
-
 ]
 
-patterns = {
-    'flicker' : {
-        'flash' : .1,
-        'pause' :   .1
-    },
-    'tinyFlicker' : {
-        'flash' : .05,
-        'pause' :   .05
-    },
-    'boom' : {
-        'flash' : 2,
-        'pause' :   .25
-    },
-    'pause' : {
-        'flash' : .0,
-        'pause' :   1
-    }
-}
 
 
 
