@@ -215,7 +215,8 @@ while True:
         timeRemaining = thunderDuration - secondsPassed
 
         if(timeRemaining < thunderDuration):
-            time.sleep(timeRemaining)
+            if (timeRemaining > 0):
+                time.sleep(timeRemaining)
 
         pygame.mixer.music.stop()
 
