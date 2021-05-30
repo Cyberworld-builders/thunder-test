@@ -201,9 +201,9 @@ while True:
             if (pattern['action'] == "flash"):
                 flash(pattern['duration'])
             elif (pattern['action'] == "crackle"):
-                pulse(pattern['duration'], .5)
+                pulse(pattern['duration'], .3)
             elif (pattern['action'] == "flicker"):
-                pulse(pattern['duration'], .2)
+                pulse(pattern['duration'], .1)
             else:
                 pause(pattern['duration'])
 
